@@ -1,0 +1,43 @@
+/* TV Card dropdonw container */
+.dropdown {
+  position: absolute;
+  top: 4.5rem;
+  right: 0;
+  width: 20rem;
+  z-index: 1;
+}
+
+/* Dropdown element */
+.element {
+  display: flex;
+  align-items: center;
+  padding: 1.1rem 1.3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.element:hover {
+  background-color: var(--color-gray-light-1);
+}
+
+.element:not(:last-child) {
+  border-bottom: 1px solid var(--color-gray-light-1);
+}
+
+/* Element icon */
+.icon {
+  height: 1.8rem;
+  width: 1.8rem;
+  color: var(--color-gray-dark-2);
+  margin-right: 1rem;
+  stroke-width: 2px;
+}
+
+/* Saved icon */
+.saved {
+  height: 1.8rem;
+  width: 1.8rem;
+  margin-right: 1rem;
+  fill: var(--color-primary);
+  stroke: var(--color-primary);
+}

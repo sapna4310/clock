@@ -1,0 +1,20 @@
+/* Description Container */
+.descriptionContainer {
+  padding: 0.5rem 2.5rem 0;
+}
+
+/* Description */
+.description {
+  text-align: justify;
+}
+
+/* Icon */
+.icon {
+  color: var(--color-black);
+  cursor: pointer;
+}
+
+/* Close description icon */
+.closeDescriptionIcon {
+  color: var(--color-gray-dark-1);
+}

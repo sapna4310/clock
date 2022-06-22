@@ -1,0 +1,108 @@
+/* Dropdown Container */
+.dropdown {
+  position: absolute;
+  top: 7rem;
+  right: 0.8em;
+  width: 35rem;
+}
+
+/* Header icon and Heading Container */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem 1.2rem;
+  border-bottom: 2px solid var(--color-gray-light-1);
+}
+
+/* Element Container */
+.container {
+  max-height: 42rem;
+  overflow: scroll;
+}
+
+/* Scroll */
+.container::-webkit-scrollbar {
+  width: 3px;
+  height: 0px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-dark-3);
+}
+
+/* Dropdown element */
+.element {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.element:not(:last-child) {
+  border-bottom: 1px solid var(--color-gray-light-1);
+}
+
+.element:hover {
+  background-color: var(--color-gray-light-1);
+}
+
+/* Dropdonw Description (Dropwdown text) */
+.text {
+  margin-left: 1rem;
+  margin-right: auto;
+}
+
+/* Dot */
+.dot {
+  align-self: center;
+  font-size: 0.9rem;
+  color: var(--color-white);
+  border-radius: 0.3rem;
+  background-color: var(--color-primary-light);
+  padding: 2px 4px;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* Notification Icon */
+.notificationIcon {
+  color: #a2a5b9;
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
+/* Close Icon */
+.closeIcon {
+  color: #a2a5b9;
+  height: 2.8rem;
+  width: 2.8rem;
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .dropdown {
+    top: unset;
+    right: unset;
+    bottom: 7.5rem;
+    left: 50%;
+    transform: translateX(-50%) !important;
+    width: 100%;
+  }
+
+  .container {
+    max-height: none;
+    height: 35rem !important;
+  }
+
+  .element,
+  .header {
+    padding: 1rem 2rem;
+  }
+}

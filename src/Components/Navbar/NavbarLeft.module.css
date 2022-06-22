@@ -1,0 +1,25 @@
+/* Left Side of Navbar */
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 4rem;
+  cursor: pointer;
+}
+
+/* Navbar Logo styles */
+.logo {
+  height: 4rem;
+  margin-right: 0.5rem;
+}
+
+.logoText {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #78255a;
+  padding-bottom: 0.2rem;
+}

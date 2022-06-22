@@ -1,0 +1,41 @@
+/* Bottom Navbar */
+.navbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+
+  position: sticky;
+  bottom: 0;
+  left: 0;
+
+  padding: 1rem 0;
+  background-color: var(--color-white);
+  box-shadow: 0 -0.3rem 1rem rgba(var(--color-black-rgb), 0.1);
+  z-index: 10;
+}
+
+/* Navbar items(notifiaction, search, message icons) styles */
+.item {
+  padding: 0.9rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  height: 4.8rem;
+  width: 4.8rem;
+  color: var(--color-gray-dark-1);
+}
+
+/* Add Items */
+.add {
+  background-color: var(--color-primary);
+  cursor: pointer;
+  padding: 0.9rem;
+  border-radius: 50%;
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #fff;
+}
+
+/* Avatar */
+.avatar {
+  cursor: pointer;
+}

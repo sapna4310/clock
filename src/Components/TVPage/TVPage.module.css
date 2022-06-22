@@ -1,0 +1,8 @@
+.tvPage {
+  min-height: 100vh;
+  padding: 2rem 8rem;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}

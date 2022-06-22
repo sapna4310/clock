@@ -1,0 +1,98 @@
+/* Dropdown element */
+.element {
+  display: flex;
+  align-items: center;
+  padding: 1.1rem 1.3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 1px solid var(--color-gray-light-1);
+}
+
+.element:hover {
+  background-color: var(--color-gray-light-1);
+}
+
+/* Element icon */
+.icon {
+  height: 1.8rem;
+  width: 1.8rem;
+  color: var(--color-gray-dark-2);
+  margin-right: 1rem;
+  stroke-width: 2px;
+}
+
+/* ? Modal Styles */
+
+/* Modal container */
+.modalContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25vw;
+  background-color: var(--color-white);
+  box-shadow: 0 3rem 4rem rgba(var(--color-black-rgb), 0.5);
+  border-radius: 1rem;
+  padding: 2rem 3rem;
+}
+
+/* Deactivating default focus styles by material ui */
+.modalContainer:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+/* Modal heading */
+.heading {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--color-gray-dark-2);
+  margin-bottom: 1.5rem;
+}
+
+/* Modal Input */
+.input {
+  color: var(--color-gray-dark-2);
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  line-height: 1;
+  outline: 1px solid var(--color-gray-light-3);
+  transition: all 0.2s;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Input styles change on input focus */
+.input:focus {
+  outline: 1px solid var(--color-gray-dark-2);
+  background-color: #fff;
+}
+
+/* Modal Submit */
+.submit {
+  padding: 0.6rem 1.5rem;
+  font-size: 1.2rem;
+  font-family: inherit;
+  color: var(--color-gray-dark-3);
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-gray-dark-3);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.submit:hover {
+  color: var(--color-gray-dark-2);
+  border: 1px solid var(--color-gray-dark-2);
+
+  border: 1px solid var(--color-primary-light);
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+}

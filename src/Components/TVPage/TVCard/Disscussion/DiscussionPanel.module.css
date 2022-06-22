@@ -1,0 +1,21 @@
+/* Discuss Element */
+.discussContainer {
+  border-top: 1px solid var(--color-gray-light-3);
+  padding: 1.5rem;
+}
+
+/* Toggle reply text */
+.toggleReplyText {
+  display: inline-block;
+  color: var(--color-primary-light);
+  line-height: 1;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+/* Toggle reply icon */
+.toggleReplyIcon {
+  height: 1.2rem;
+  width: 1.2rem;
+  margin-top: 2px;
+}

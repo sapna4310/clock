@@ -1,0 +1,62 @@
+/* Reply container */
+.reply {
+  margin-left: 5rem;
+  padding: 0.5rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--color-gray-light-3);
+}
+
+/* repliedTo text styles */
+.repliedTo {
+  background-color: var(--color-gray-medium-3);
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: 1.2rem;
+  padding: 0.1rem 0.2rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* reply header */
+.header {
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown Container */
+.dropdownContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* More icon */
+.more {
+  height: 1.8rem;
+  width: 1.8rem;
+  cursor: pointer;
+  color: var(--color-gray-medium-3);
+}
+
+/* Time */
+.time {
+  margin-right: 2rem;
+  margin-left: auto;
+}
+
+/* reply icon */
+.replyIcon {
+  height: 1.8rem;
+  width: 1.8rem;
+  cursor: pointer;
+  margin-right: 2rem;
+  color: var(--color-primary-light);
+}
+
+/* Discuss Text */
+.discussText {
+  line-height: 1.2;
+  margin-top: 0.7rem;
+}
