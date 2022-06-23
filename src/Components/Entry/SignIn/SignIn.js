@@ -29,7 +29,7 @@ import { useDispatch } from 'react-redux';
 
 // imports Modal component for forget password
 import Modal from '../ForgetPassword/ForgetPassword';
-
+import Validation from './Signin.validation'
 /* ------- Function Sign In -------- */
 
 function SignIn() {
@@ -39,6 +39,11 @@ function SignIn() {
   //To get users credentials
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errors,setErrors] = useState('')
+  const handleValidation = () =>{
+    const validationErrors=Validation({'email':email,'password':password})
+    setErrors(validationErrors)
+  }
 
   // Redux implementation
   const dispatch = useDispatch();
@@ -102,11 +107,10 @@ function SignIn() {
             </div>
           </nav>
           <img src={Image} alt="" />
-        </div>
-        <div className={classes.container}>
+        </div><div className={classes.container}>
           <div className={classes.rightContainer}>
             <div className={classes.rightContainerDesc}>
-              <h2 className={classes.heading}>Welcome Back !</h2>
+              <h2 className={classes.heading}>Well Come back !</h2>
             </div>
 
             <div className={classes.socialLoginContainer}>
@@ -116,6 +120,7 @@ function SignIn() {
                     className={classes.socialLoginIcon}
                     src={google}
                     alt=""
+                    
                   />
                 </div>
               </div>
@@ -134,15 +139,15 @@ function SignIn() {
 
             <p className={`element-description ${classes.divider}`}>or</p>
             <div className={classes.formContainer}>
-              <form onSubmit={(e) => handleSubmit(e)}>
+              <form onSubmit={ handleSubmit}>
                 <div className={classes.formFieldsContainer}>
                   <div className={classes.formFields}>
-                    <BlackTextField
+                    <TextField
                       label="Email or Username"
                       variant="outlined"
                       value={email}
                       
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={(e)=>setEmail(e.target.value)}
                     
                       sx={{ width: 350 }}
                   
@@ -151,12 +156,14 @@ function SignIn() {
                       }}
                       InputLabelProps={{ style: { fontSize: 14 } }}
                     />
-                    <BlackTextField
+                    
+                    {errors?errors.email:''}
+                    <TextField
                       label=" Password"
                       variant="outlined"
-                      type={showPassword ? 'text' : ' password'} // <-- This is where the magic happens
+                      type={showPassword ? 'text' : 'password'} // <-- This is where the magic happens
                       value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      onChange={(e) => {e.preventDefault();setPassword(e.target.value) }}
                       InputLabelProps={{
                         style: { fontSize: 14 },
                       }}
@@ -180,31 +187,34 @@ function SignIn() {
                         ),
                       }}
                     />
+                    {errors?errors.password:''}
                   </div>
 
                   <div className={classes.moreFeatures}>
                     <div className={classes.checkbox}>
-                      <input type="checkbox" name="checkbox" id="checkbox" />
-                      <label htmlFor="checkbox">Remember me</label>
+                      <input type="checkbox" name="checkbox" id="checkbox" style={{backgroundColor:"#000"}} />
+                      <label htmlFor="checkbox">Remember me </label>
+                      
                     </div>
                     <button
                       onClick={() => {
                         setModalOpen(true);
                       }}
                       className="element-color"
-                    >Forgot password ?
-                    
+                    >
+                     Forgot Password?
                     </button>
                   </div>
 
-                  <button type="submit" className={classes.button}>
-                    Sign In 
+                  <button type="submit" className={classes.button} onClick={handleValidation}>
+                    Sign In
                   </button>
-                  <span> 
-                    New User? <Link to="/entry/SignUp/">Sign Up</Link>
+                  <span>
+                  Already have an account ? <Link to="/entry/Signup">Sign Up</Link>
                   </span>
                   {/* <div className={classes.signInFormErrorMsg}>Hello</div> */}
                 </div>
+             
               </form>
 
               {/* <div className={classes.signUpLink}>

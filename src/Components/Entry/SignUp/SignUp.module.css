@@ -202,12 +202,16 @@ body {
   font-family: 'Roboto', 'sans-serif';
 }
 
-.signInFormErrorMsg {
+
+.signUpFormErrorMsg  {
   min-height: 2rem;
   display: flex;
   padding: 0.25em 0.25em;
   width: 100%;
+  color: var(--color red);
 }
+
+
 
 /* Forgot Password and Remember Me container */
 .moreFeatures {
@@ -303,8 +307,6 @@ body {
   font-size: 14px;
   opacity: 0.8;
 }
-
-
 
 
 @media screen  and (max-width: 1024px) {

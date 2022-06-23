@@ -1,5 +1,5 @@
 /* -----Importing necessary stuff----- */
-
+import {FiAlertCircle} from 'react-icons/fi';
 import React, { useState } from 'react';
 import { login } from '../../../features/userSlice';
 
@@ -41,30 +41,37 @@ function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors,setErrors] = useState('')
-  const handleValidation = () =>{
+  const [checkedError,setCheckedError] = useState(false)
+  function handleValidation (){
     const validationErrors=Validation({'email':email,'password':password})
     setErrors(validationErrors)
+    if(!checked){
+      setCheckedError(true)
+    }else {
+      setCheckedError(false)
+    }
   }
   // Redux implementation
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     dispatch(
       login({
         email: email,
         password: password,
         loggedIn: true,
       })
-    );
+    )
+    
+    
   };
 
   // For password field
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
-
+  const [checked,setChecked] = useState(false)
   //TextField styles
   const BlackTextField = styled(TextField)`
     & label.Mui-focused {
@@ -77,7 +84,7 @@ function SignUp() {
       }
     }
   `;
-
+ 
   /* -----Return to DOM------ */
   return (
     <div className={classes.screenContainer}>
@@ -138,15 +145,15 @@ function SignUp() {
 
             <p className={`element-description ${classes.divider}`}>or</p>
             <div className={classes.formContainer}>
-              <form onSubmit={(e) => handleSubmit(e)}>
+              <form onSubmit={ handleSubmit}>
                 <div className={classes.formFieldsContainer}>
                   <div className={classes.formFields}>
-                    <BlackTextField
+                    <TextField
                       label="Email"
                       variant="outlined"
                       value={email}
                       
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={(e)=>setEmail(e.target.value)}
                     
                       sx={{ width: 350 }}
                   
@@ -155,13 +162,15 @@ function SignUp() {
                       }}
                       InputLabelProps={{ style: { fontSize: 14 } }}
                     />
-                    {errors?errors.email:''}
-                    <BlackTextField
+                    
+                    {errors ? errors.email:""}
+                    <TextField
                       label="Create Password"
                       variant="outlined"
                       type={showPassword ? 'text' : 'password'} // <-- This is where the magic happens
                       value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      onChange={(e) => {e.preventDefault();setPassword(e.target.value) }}
+                      sx={{ width: 350 }}
                       InputLabelProps={{
                         style: { fontSize: 14 },
                       }}
@@ -185,12 +194,13 @@ function SignUp() {
                         ),
                       }}
                     />
+                    {errors?errors.password:''}
                   </div>
 
                   <div className={classes.moreFeatures}>
                     <div className={classes.checkbox}>
-                      <input type="checkbox" name="checkbox" id="checkbox" style={{backgroundColor:"#000"}} />
-                      <label htmlFor="checkbox">I agree to the <a className='Terms'>“Terms of Use”</a></label>
+                      <input type="checkbox" name="checkbox" id="checkbox" style={{backgroundColor:"#000"}} onChange={()=>checked?setChecked(false):setChecked(true)}/>
+                      <label htmlFor="checkbox"><span style={ checkedError ? { color:'red'} : {color : ''} }>I agree to the <a className='Terms'>“Terms of Use”</a></span></label>
                       
                     </div>
                     <button
@@ -198,10 +208,11 @@ function SignUp() {
                         setModalOpen(true);
                       }}
                       className="element-color"
-                    >
+                      >
                     
                     </button>
                   </div>
+                      {checkedError?checkedError.checkbox:""}
 
                   <button type="submit" className={classes.button} onClick={handleValidation}>
                     Sign Up
@@ -228,6 +239,7 @@ function SignUp() {
         </div>
       </div>
       {modalOpen && <Modal setOpenModal={setModalOpen} />}
+
     </div>
   );
 }
