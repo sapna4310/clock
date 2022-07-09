@@ -22,12 +22,12 @@
 .clock::after {
   background: #aaa;
   content: "";
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   position: absolute;
   z-index: 2;
-  top: 44%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: 2px solid #fff;
@@ -48,7 +48,7 @@
   width: 4px;
   height: 103px;
   background: #444;
-  top: 17.5%;
+  top: 19.5%;
   left: 49%;
   transform-origin: bottom;
 }
@@ -56,9 +56,9 @@
 .sec_hand {
   position: absolute;
   width: 2px;
-  height: 130px;
+  height: 131px;
   background: red;
-  top: 10.5%;
+  top: 12.5%;
   left: 50%;
   transform-origin: bottom;
 }
