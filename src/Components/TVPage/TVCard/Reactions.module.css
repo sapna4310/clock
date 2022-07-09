@@ -1,9 +1,0 @@
-.speedDial {
-  position: absolute;
-  left: 0;
-  bottom: 1rem;
-}
-
-.action button {
-  background-color: var(--color-white);
-}
